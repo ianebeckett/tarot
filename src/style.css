@@ -1,35 +1,35 @@
 * {
-  box-sizing: border-box;
-  color: #333;
+    box-sizing: border-box;
+    color: #333;
 }
 
 h1 {
-  margin-left: 2%;
+    margin-left: 2%;
 }
 
 /* TODO: remove after dev */
 div {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 body {
-  background-color: #dfdbe5;
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #dfdbe5;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 img {
-  width: 100%;
+    width: 100%;
 }
 
 .reading-table {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 5%;
-  margin-right: 25%;
-  column-gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5%;
+    margin-right: 25%;
+    column-gap: 20px;
 }
 
 .card {
-  width: 200px;
+    width: 200px;
 }
