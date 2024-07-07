@@ -7,10 +7,10 @@ const App = () => {
     <div>
       <h1>Tarot Reading</h1>
       <div className="reading-table">
-        <Card art="./cards/512px-CardBack.jpg" />
-        <Card art="/cards/512px-Swords07.jpg" />
-        <Card art="/cards/512px-Swords08.jpg" />
-        <Card art="/cards/512px-RWS_Tarot_21_World.jpg" />
+        <Card art="./cards/CardBack.jpg" />
+        <Card art="/cards/Swords07.jpg" />
+        <Card art="/cards/Swords08.jpg" />
+        <Card art="/cards/21_World.jpg" />
       </div>
     </div>
   );
