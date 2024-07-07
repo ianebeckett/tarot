@@ -25,9 +25,13 @@ img {
 .reading-table {
   display: flex;
   justify-content: flex-start;
-  margin-left: 5%;
+  margin-top: 10%;
   margin-right: 25%;
+  margin-left: 5%;
   column-gap: 20px;
+}
+
+.btn {
 }
 
 .card {
