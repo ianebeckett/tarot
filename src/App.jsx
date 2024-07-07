@@ -4,9 +4,11 @@ import Card from "./Card";
 
 const App = () => {
   return (
-    <div>
-      <h1>Tarot Reading</h1>
-      <button className="btn">draw a card</button>
+    <div className="margin">
+      <div className="control-panel">
+        <h1>Tarot Reading</h1>
+        <button className="button-65">draw a card</button>
+      </div>
       <div className="reading-table">
         <Card art="./cards/CardBack.jpg" />
         <Card art="/cards/Swords07.jpg" />
