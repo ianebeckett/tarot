@@ -4,8 +4,7 @@ import Card from "./Card";
 const CardTable = (props) => {
     let cards = [];
 
-    console.log(props);
-
+    console.log("Cardtable props: ", props);
     props.cards.forEach((cardDrawn) =>
         cards.push(<Card src={cardDrawn} />)
     );

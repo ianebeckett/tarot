@@ -94,7 +94,9 @@ const App = () => {
 
     function drawCard() {
         const rand = getRandomInt(0, cardBank.length - 1);
-        setCards(cards.push(cardBank[rand]));
+        cards.push(cardBank[rand])
+        console.log("App cards:", cards);
+        setCards(cards);
     };
 
     return (<div className="margin">
