@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import Card from "/Card";
+import CardTable from "./CardTable";
 
 const App = () => {
+  const [cards, setCards] = useState(["/cards/00_CardBack.jpg"]);
+
   return (
     <div className="margin">
       <div className="control-panel">
         <h1>Tarot Reading</h1>
-        <button className="button-65">draw a card</button>
+        <button onClick={(e) => console.log(e)} className="button-65">
+          draw a card
+        </button>
       </div>
-      <div className="reading-table">
-        <Card art="./cards/CardBack.jpg" />
-        <Card art="/cards/Swords07.jpg" />
-        <Card art="/cards/Swords08.jpg" />
-        <Card art="/cards/21_World.jpg" />
-      </div>
+      <CardTable cards={cards} />
     </div>
   );
 };

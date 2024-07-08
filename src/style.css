@@ -28,15 +28,6 @@ img {
     align-items: center;
 }
 
-.reading-table {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 50px;
-  margin-right: 25%;
-  margin-left: 5%;
-  column-gap: 20px;
-}
-
 .button-65 {
     appearance: none;
     backface-visibility: hidden;
@@ -88,5 +79,14 @@ img {
 }
 
 .card {
-  width: 200px;
+    width: 200px;
+}
+
+.cardTable {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    margin-right: 25%;
+    margin-left: 5%;
+    column-gap: 20px;
 }
