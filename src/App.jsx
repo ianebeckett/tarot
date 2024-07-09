@@ -12,9 +12,14 @@ const App = () => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    // draw a card that hasn't been drawn yet
     function drawCard() {
-        const rand = getRandomInt(0, allCards.length - 1);
-        cards.push(allCards[rand])
+        const images = allCards.images;
+        let random = getRandomInt(0, images.length - 1);
+        while (cards.includes(images[random])) {
+            random = getRandomInt(0, images.length - 1);
+        }
+        cards.push(images[random])
         console.log("App cards:", cards);
         setCards(cards);
     };
