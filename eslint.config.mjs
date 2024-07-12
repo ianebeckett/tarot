@@ -12,22 +12,31 @@ const compat = new FlatCompat({
     allConfig: js.configs.all
 });
 
-export default [...compat.extends("eslint:recommended", "prettier"), {
-    plugins: {},
-
-    languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.node,
+export default [
+    ...compat.extends(
+        "eslint:recommended",
+        "prettier"
+    ),
+    {
+        plugins: {},
+        rules: {
+            "react/prop-types": 0,
         },
 
-        ecmaVersion: 2022,
-        sourceType: "module",
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+            },
 
-        parserOptions: {
-            ecmaFeatures: {
-                jsx: true,
+            ecmaVersion: 2022,
+            sourceType: "module",
+
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true,
+                },
             },
         },
-    },
-}];
+    }
+];
