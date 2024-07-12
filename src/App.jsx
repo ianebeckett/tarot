@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import CardTable from "./CardTable";
 import allCards from "./allCards.json";
 
 const App = () => {
+    let deck = allCards.images;
     const [cards, setCards] = useState(["/cards/00_CardBack.jpg"]);
 
     function getRandomInt(min, max) {
@@ -12,27 +12,34 @@ const App = () => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    // draw a card that hasn't been drawn yet
-    function drawCard() {
+    function handleDraw() {
         const images = allCards.images;
-        let random = getRandomInt(0, images.length - 1);
-        while (cards.includes(images[random])) {
+        let random;
+        do {
             random = getRandomInt(0, images.length - 1);
-        }
-        cards.push(images[random])
-        console.log("App cards:", cards);
-        setCards(cards);
+        } while (cards.includes(images[random]));
+        setCards((prevCards) => [...prevCards, deck[random]]);
+        console.log(cards);
     };
 
-    return (<div className="margin">
-        <div className="control-panel">
-            <h1>Tarot Reading</h1>
-            <button onClick={drawCard} className="button-65">
-                draw a card
-            </button>
-        </div>
-        <CardTable cards={cards} />
-    </div>
+    return (
+        <div className="margin">
+            <div className="control-panel">
+                <h1>Tarot Reading</h1>
+                <button onClick={handleDraw} className="button-65">
+                    draw a card
+                </button>
+            </div>
+            <div className="cardTable"> {
+                cards.map((card, index) => {
+                    return (
+                        <div key={index} className="card" >
+                            <img src={card} />
+                        </div>
+                    )
+                })}
+            </div>
+        </div >
     );
 };
 
