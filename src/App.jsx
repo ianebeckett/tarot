@@ -14,13 +14,16 @@ const App = () => {
   }
 
   function handleDraw() {
+    if (cards.length === 4) {
+      return;
+    }
+
     const images = allCards.images;
     let random;
     do {
       random = getRandomInt(0, images.length - 1);
     } while (cards.includes(images[random]));
     setCards((prevCards) => [...prevCards, deck[random]]);
-    console.log(cards);
   }
 
   return (
