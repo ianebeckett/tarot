@@ -1,0 +1,8 @@
+todo:
+prevent cards from shrinking to fit screen; have them be static sized based on scren width
+onHover: translate ("lift") card with shadow underneath
+onClick: display modal with art and text
+
+get better card assets
+apply card border style (white border with rounded edges)
+play sound effect when drawing card

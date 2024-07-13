@@ -4,7 +4,8 @@ import allCards from "./allCards.json";
 
 const App = () => {
   let deck = allCards.images;
-  const [cards, setCards] = useState(["/cards/00_CardBack.jpg"]);
+  let backArt = "/cards/00_CardBack.jpg";
+  const [cards, setCards] = useState([backArt]);
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -33,7 +34,7 @@ const App = () => {
       <div className="cardTable">
         {cards.map((card, index) => {
           return (
-            <div key={index} className="card">
+            <div key={index} className={card === backArt ? "deck" : "card"}>
               <img src={card} />
             </div>
           );
