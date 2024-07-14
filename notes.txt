@@ -2,7 +2,10 @@ todo:
 prevent cards from shrinking to fit screen; have them be static sized based on scren width
 onHover: translate ("lift") card with shadow underneath
 onClick: display modal with art and text
+instead of rendering div onClick, have the card divs already spaced out and insert a
+random card image onClick
 
 get better card assets
 apply card border style (white border with rounded edges)
 play sound effect when drawing card
+make rotating loader image, test with 3G connection simulation in devtools

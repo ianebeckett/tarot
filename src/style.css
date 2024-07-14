@@ -19,21 +19,32 @@ img {
 .cardTable {
     display: flex;
     justify-content: flex-start;
-    margin-left: 5%;
-    margin-right: 25%;
+    padding: 40px; /* space for transition */
     column-gap: 20px;
 }
 
-.deck{
+.deck {
     width: 200px;
 }
 
 .card {
+    display: flex;
     width: 200px;
+    transition: margin 0.2s ease-in-out;
+}
+
+.card img {
+    object-fit: contain;
+}
+
+.card:hover {
+    margin-top: -40px;
 }
 
 .margin {
     margin: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .control-panel {

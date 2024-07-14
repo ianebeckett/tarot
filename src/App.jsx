@@ -29,7 +29,6 @@ const App = () => {
   return (
     <div className="margin">
       <div className="control-panel">
-        <h1>Tarot Reading</h1>
         <button onClick={handleDraw} className="button-65">
           draw a card
         </button>
