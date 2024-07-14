@@ -27,21 +27,17 @@ const App = () => {
   }
 
   return (
-    <div className="margin">
-      <div className="control-panel">
-        <button onClick={handleDraw} className="button-65">
-          draw a card
-        </button>
-      </div>
-      <div className="cardTable">
-        {cards.map((card, index) => {
-          return (
-            <div key={index} className={card === backArt ? "deck" : "card"}>
-              <img src={card} />
-            </div>
-          );
-        })}
-      </div>
+    <div className="card-table">
+      <button onClick={handleDraw} className="button-65">
+        draw a card
+      </button>
+      {cards.map((card, index) => {
+        return (
+          <div key={index} className={card === backArt ? "deck" : "card"}>
+            <img src={card} />
+          </div>
+        );
+      })}
     </div>
   );
 };

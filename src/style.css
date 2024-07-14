@@ -12,15 +12,27 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+    font-size: 37px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 14px;
+    margin-top: 14px;
+}
+
+
 img {
     width: 100%;
 }
 
-.cardTable {
+.card-table {
     display: flex;
+    align-items: center;
     justify-content: flex-start;
     padding: 40px; /* space for transition */
     column-gap: 20px;
+    margin: 0 auto;
 }
 
 .deck {
@@ -39,21 +51,8 @@ img {
 }
 
 .card img:hover {
-    margin-top: -40px;
+    margin-top: -40px; /* lift card */
     /*box-shadow: black 10px 10px;*/
-}
-
-.margin {
-    margin: 30px;
-    display: flex;
-    align-items: center;
-}
-
-.control-panel {
-    max-width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .button-65 {
@@ -104,4 +103,11 @@ img {
     box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
     transform: translateY(2px);
     transition-duration: .35s;
+}
+
+.panel {
+    background: #f2f2f2;
+    border: 1px solid rgb(236, 240, 241);
+    margin: 0 0 22px 0;
+    padding: 20px;
 }
