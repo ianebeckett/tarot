@@ -42,15 +42,12 @@ img {
 .card {
     display: flex;
     width: 200px;
-}
-
-.card img {
     object-fit: contain;
     transition: margin 0.2s ease-in-out;
     /*box-shadow 0.2s ease-in-out;*/
 }
 
-.card img:hover {
+.card:hover {
     margin-top: -40px; /* lift card */
     /*box-shadow: black 10px 10px;*/
 }
