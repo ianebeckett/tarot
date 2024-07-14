@@ -12,3 +12,5 @@ play sound effect when drawing card
 instead of button, prompt "click the deck to draw a card."
 give GDPR-compliant cookie to not re-show prompt
 make rotating loader image, test with 3G connection simulation in devtools
+hover top card from deck
+shadow effect on hovered card

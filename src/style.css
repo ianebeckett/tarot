@@ -30,15 +30,17 @@ img {
 .card {
     display: flex;
     width: 200px;
-    transition: margin 0.2s ease-in-out;
 }
 
 .card img {
     object-fit: contain;
+    transition: margin 0.2s ease-in-out;
+    /*box-shadow 0.2s ease-in-out;*/
 }
 
-.card:hover {
+.card img:hover {
     margin-top: -40px;
+    /*box-shadow: black 10px 10px;*/
 }
 
 .margin {
