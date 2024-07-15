@@ -4,6 +4,7 @@ idea: instead of rendering div onClick, have the card divs already spaced out an
 showcase: display modal with art and text
 add simple analytics
 
+center drawn cards
 shadow effect on hovered card
 get better card assets
 apply card border style (white border with rounded edges)

@@ -30,8 +30,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 40px; /* space for transition */
-    padding-left: 140px;
+    padding: 40px 200px; /* space for transition */
     column-gap: 20px;
     margin: 0 auto;
 }
