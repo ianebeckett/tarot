@@ -1,16 +1,14 @@
 todo:
 prevent cards from shrinking to fit screen; have them be static sized based on scren width
-onHover: translate ("lift") card with shadow underneath
-onClick: display modal with art and text
-instead of rendering div onClick, have the card divs already spaced out and insert a
-random card image onClick
+idea: instead of rendering div onClick, have the card divs already spaced out and insert a card
+showcase: display modal with art and text
 add simple analytics
 
+shadow effect on hovered card
 get better card assets
 apply card border style (white border with rounded edges)
+check that all cards are the same height and width
+animate card draw
 play sound effect when drawing card
-instead of button, prompt "click the deck to draw a card."
-give GDPR-compliant cookie to not re-show prompt
+prompt "click the deck to draw a card."
 make rotating loader image, test with 3G connection simulation in devtools
-hover top card from deck
-shadow effect on hovered card

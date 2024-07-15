@@ -5,7 +5,7 @@ import allCards from "./allCards.json";
 const App = () => {
   let deck = allCards.images;
   let backArt = "/cards/00_CardBack.jpg";
-  const [cards, setCards] = useState([backArt]);
+  const [cards, setCards] = useState([backArt, backArt]);
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -14,7 +14,7 @@ const App = () => {
   }
 
   function handleDraw() {
-    if (cards.length === 4) {
+    if (cards.length === 5) {
       return;
     }
 
@@ -26,15 +26,36 @@ const App = () => {
     setCards((prevCards) => [...prevCards, deck[random]]);
   }
 
+  function setClass(i) {
+    if (i == 0) {
+      return "deck";
+    }
+    if (i == 1) {
+      return "top-card";
+    }
+    return "card";
+  }
+
+  function showcase() {
+      //console.log("yay");
+  }
+
+  function setOnClick(i) {
+    if (i == 0) {
+      return null;
+    }
+    if (i == 1) {
+      return handleDraw;
+    }
+      return showcase;
+  }
+
   return (
     <div className="card-table">
-      <button onClick={handleDraw} className="button-65">
-        draw a card
-      </button>
       {cards.map((card, index) => {
         return (
-          <div key={index} className={card === backArt ? "deck" : "card"}>
-            <img src={card} />
+          <div key={index} className={setClass(index)}>
+            <img src={card} onClick={setOnClick(index)} />
           </div>
         );
       })}
