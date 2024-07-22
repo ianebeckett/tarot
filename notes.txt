@@ -1,17 +1,19 @@
-todo:
-extract Components from App
-prevent cards from shrinking to fit screen; have them be static sized based on scren width
-idea: instead of rendering div onClick, have the card divs already spaced out and insert a card
-showcase: display modal with art and text
-add simple analytics
+INFRA
+    register domain, deploy to website
+    add simple analytics
+CODE
+    extract Components from App
+STYLE
+    don't hover top card if max card already drawn
+    center drawn cards
+    shadow effect on hovered card
+    prevent cards from shrinking to fit screen; have them be static sized based on scren width
+    idea: instead of rendering div onClick, have the card divs already spaced out and insert a card
+    prompt "click the deck to draw a card."
+    get/make better card assets
+    apply card border style (white border with rounded edges)
+    check that all cards are the same height and width
+FEATURES
+    showcase: display modal with art and text
+    make rotating loader image, test with 3G connection simulation in devtools
 
-center drawn cards
-don't hover top card if max card already drawn
-shadow effect on hovered card
-get better card assets
-apply card border style (white border with rounded edges)
-check that all cards are the same height and width
-animate card draw
-play sound effect when drawing card
-prompt "click the deck to draw a card."
-make rotating loader image, test with 3G connection simulation in devtools
