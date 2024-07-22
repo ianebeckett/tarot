@@ -36,10 +36,6 @@ const App = () => {
     return "card";
   }
 
-  function showcase() {
-      //console.log("yay");
-  }
-
   function setOnClick(i) {
     if (i == 0) {
       return null;
@@ -48,6 +44,10 @@ const App = () => {
       return handleDraw;
     }
       return showcase;
+  }
+
+  function showcase() {
+      //console.log("yay");
   }
 
   return (

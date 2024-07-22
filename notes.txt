@@ -1,10 +1,12 @@
 todo:
+extract Components from App
 prevent cards from shrinking to fit screen; have them be static sized based on scren width
 idea: instead of rendering div onClick, have the card divs already spaced out and insert a card
 showcase: display modal with art and text
 add simple analytics
 
 center drawn cards
+don't hover top card if max card already drawn
 shadow effect on hovered card
 get better card assets
 apply card border style (white border with rounded edges)

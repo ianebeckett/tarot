@@ -43,7 +43,7 @@ img {
     width: 200px;
     position: relative;
     right: 220px;
-    transition: margin 0.2s ease-in-out;
+    transition: margin 0.1s ease-in-out;
 }
 
 .top-card:hover {
@@ -54,8 +54,8 @@ img {
 .card {
     display: flex;
     width: 200px;
-    transition: margin 0.2s ease-in-out;
-    /*box-shadow 0.2s ease-in-out;*/
+    transition: margin 0.1s ease-in-out;
+    /*box-shadow 0.1s ease-in-out;*/
 }
 
 .card:hover {
