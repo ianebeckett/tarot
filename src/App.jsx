@@ -43,11 +43,11 @@ const App = () => {
     if (i == 1) {
       return handleDraw;
     }
-      return showcase;
+    return showcase;
   }
 
   function showcase() {
-      //console.log("yay");
+    //console.log("yay");
   }
 
   return (
