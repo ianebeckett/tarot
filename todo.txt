@@ -3,6 +3,8 @@ INFRA
     add simple analytics
 CODE
     extract Components from App
+    configure vim eslint lsp and npm eslint to match
+    move cards from src to public
 STYLE
     don't hover top card if max card already drawn
     center drawn cards
@@ -16,4 +18,5 @@ STYLE
 FEATURES
     showcase: display modal with art and text
     make rotating loader image, test with 3G connection simulation in devtools
-
+    user login via google etc.
+    save history of user's readings to DB
