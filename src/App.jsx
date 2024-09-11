@@ -4,7 +4,7 @@ import allCards from "./allCards.json";
 
 const App = () => {
   let deck = allCards.images;
-  let backArt = "src/cards/00_CardBack.jpg";
+  let backArt = "/cards/00_CardBack.jpg";
   const [cards, setCards] = useState([backArt, backArt]);
 
   function getRandomInt(min, max) {
