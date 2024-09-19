@@ -32,6 +32,10 @@ img {
     width: 100%;
 }
 
+.btn {
+    padding: 0px 200px;
+}
+
 .card-table {
     display: flex;
     align-items: center;

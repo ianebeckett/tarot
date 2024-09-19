@@ -36,7 +36,7 @@ const App = () => {
         return "card";
     }
 
-    function setOnClick(i) {
+    function setCardOnClick(i) {
         if (i == 0) {
             return null;
         }
@@ -46,19 +46,28 @@ const App = () => {
         return showcase;
     }
 
+    function handleReset() {
+        setCards([backArt, backArt]);
+    }
+
     function showcase() {
         //console.log("yay");
     }
 
     return (
-        <div className="card-table">
-            {cards.map((card, index) => {
-                return (
-                    <div key={index} className={setClass(index)}>
-                        <img src={card} onClick={setOnClick(index)} />
-                    </div>
-                );
-            })}
+        <div>
+            <div className="card-table">
+                {cards.map((card, index) => {
+                    return (
+                        <div key={index} className={setClass(index)}>
+                            <img src={card} onClick={setCardOnClick(index)} />
+                        </div>
+                    );
+                })}
+            </div>
+            <div className='btn' id='btn-reset' onClick={handleReset}>
+                <button >RESET</button>
+            </div>
         </div>
     );
 };
