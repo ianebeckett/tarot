@@ -1,5 +1,4 @@
-{ "images" : 
-[
+{ "images" : [
 "/cards/00_Fool.jpg",
 "/cards/01_Magician.jpg",
 "/cards/02_High_Priestess.jpg",
@@ -78,5 +77,4 @@
 "/cards/Wands12.jpg",
 "/cards/Wands13.jpg",
 "/cards/Wands14.jpg"
-]
-}
+]}
