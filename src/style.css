@@ -2,11 +2,9 @@
     box-sizing: border-box;
 }
 
-/*
 div {
     border: 1px solid black;
 }
-*/
 
 body {
     margin: 0;
@@ -33,7 +31,7 @@ img {
 }
 
 .btn {
-    padding: 0px 200px;
+    padding: 0 200px;
 }
 
 .card-table {
@@ -48,16 +46,24 @@ img {
 
 .deck {
     width: 200px;
+    position: relative;
 }
 
-.top-card {
+.deck-cards {
+    position: absolute;
+    z-index: 1;
+}
+
+.deck-top {
     width: 200px;
     position: relative;
-    right: 220px;
+    top: 0;
+    left: 0;
+    z-index: 2;
     transition: margin 0.1s ease-in-out;
 }
 
-.top-card:hover {
+.deck-top:hover {
     margin-top: -40px;
     /* lift card */
     /*box-shadow: black 10px 10px;*/

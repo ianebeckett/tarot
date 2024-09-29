@@ -1,11 +1,16 @@
-INFRA
-    register domain, deploy to website
-    add simple analytics
+TOOLS
+    fix npm run lint
+    get LSP to error on missing import { useState }
+    configure prettier and eslint
+        -semicolons
+        -trailing commas
 CODE
     extract Components from App
     configure vim eslint lsp and npm eslint to match
-    move cards from src to public
+    move cards urls to their own module
 STYLE
+    fix jank when hovering top card from below
+    remove white area from aroun cards (check Luke smith video)
     don't hover top card if max card already drawn
     center drawn cards
     shadow effect on hovered card
