@@ -5,3 +5,5 @@ node_modules/
 .env
 .nvimlog
 .vscode/
+
+todo.txt

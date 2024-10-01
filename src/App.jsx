@@ -106,9 +106,14 @@ function App() {
         setCardsDrawn([...cardsDrawn, urls[random]]);
     }
 
+    function handleReset() {
+        setCardsDrawn([]);
+    }
+
     return (
         <div className="card-table">
             <Deck handleDraw={handleDraw} />
+            <div className='btn' id='btn-reset' onClick={handleReset}>
                 <button >RESET</button>
             </div>
         </div>
