@@ -61,7 +61,7 @@ img {
     transition: margin 0.1s ease-in-out;
 }
 
-.deck-top:hover {
+.deck:hover .deck-top {
     margin-top: -40px;
     margin-bottom: +40px;
     /* lift card */
@@ -75,8 +75,9 @@ img {
     /*box-shadow 0.1s ease-in-out;*/
 }
 
-.card:hover {
+.card-container:hover .card {
     margin-top: -40px;
+    margin-bottom: +40px;
     /* lift card */
     /*box-shadow: black 10px 10px;*/
 }

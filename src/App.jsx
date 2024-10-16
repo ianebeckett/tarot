@@ -116,8 +116,11 @@ function App() {
         <div>
             <div className="row">
                 <Deck handleDraw={handleDraw} />
-                {drawnCards.map((imgUrl) =>
-                    <img className='card' key={imgUrl} src={imgUrl} />)}
+                {drawnCards.map((imgUrl) => (
+                    <div className="card-container">
+                        <img className='card' key={imgUrl} src={imgUrl} />
+                    </div>)
+                )}
             </div>
             <div className="row">
                 <button id='btn-reset' onClick={handleReset}>RESET</button>
