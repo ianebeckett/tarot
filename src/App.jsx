@@ -84,9 +84,9 @@ const urls = [
 ]
 
 function App() {
-    const [cardsDrawn, setCardsDrawn] = useState([]);
+    const [drawnCards, setDrawnCards] = useState([]);
 
-    console.log(cardsDrawn); // invoked on rerender
+    console.log(drawnCards); // invoked on rerender
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -95,26 +95,32 @@ function App() {
     }
 
     function handleDraw() {
-        if (cardsDrawn.length === 3) {
+        if (drawnCards.length === 3) {
             return;
         }
 
         let random;
         do {
             random = getRandomInt(0, urls.length - 1);
-        } while (cardsDrawn.includes(urls[random]));
-        setCardsDrawn([...cardsDrawn, urls[random]]);
+        } while (drawnCards.includes(urls[random]));
+        setDrawnCards([...drawnCards, urls[random]]);
     }
 
     function handleReset() {
-        setCardsDrawn([]);
+        if (drawnCards.length) {
+            setDrawnCards([]);
+        }
     }
 
     return (
-        <div className="card-table">
-            <Deck handleDraw={handleDraw} />
-            <div className='btn' id='btn-reset' onClick={handleReset}>
-                <button >RESET</button>
+        <div>
+            <div className="row">
+                <Deck handleDraw={handleDraw} />
+                {drawnCards.map((imgUrl) =>
+                    <img className='card' key={imgUrl} src={imgUrl} />)}
+            </div>
+            <div className="row">
+                <button id='btn-reset' onClick={handleReset}>RESET</button>
             </div>
         </div>
     );

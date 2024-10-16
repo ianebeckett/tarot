@@ -2,9 +2,11 @@
     box-sizing: border-box;
 }
 
+/*
 div {
     border: 1px solid black;
 }
+*/
 
 body {
     margin: 0;
@@ -30,11 +32,7 @@ img {
     width: 100%;
 }
 
-.btn {
-    padding: 0 200px;
-}
-
-.card-table {
+.row {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -65,6 +63,7 @@ img {
 
 .deck-top:hover {
     margin-top: -40px;
+    margin-bottom: +40px;
     /* lift card */
     /*box-shadow: black 10px 10px;*/
 }
@@ -87,8 +86,4 @@ img {
     border: 1px solid rgb(236, 240, 241);
     margin: 0 0 22px 0;
     padding: 20px;
-}
-
-.row {
-    margin: 0 200px;
 }

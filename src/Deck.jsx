@@ -11,4 +11,3 @@ export function Deck(props) {
         </div>
     )
 }
-
