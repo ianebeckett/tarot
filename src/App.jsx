@@ -263,7 +263,7 @@ const cards = [
         imgUrl: "/cards/Swords13.jpg"
     },
     {
-        description: "King of Swords: Represents authority and truth. The throne symbolizes logical leadership. ",
+        description: "King of Swords: Represents authority and truth. The throne symbolizes logical leadership.",
         imgUrl: "/cards/Swords14.jpg"
     },
     {
@@ -358,8 +358,8 @@ function App() {
             <div className="row">
                 <Deck handleDraw={handleDraw} />
                 {drawnCards.map((card) => (
-                    <div className="card-container">
-                        <img className='card' key={card.imgUrl} src={card.imgUrl} />
+                    <div className="card-container" key={card.imgUrl} >
+                        <img className='card' src={card.imgUrl} />
                     </div>)
                 )}
             </div>

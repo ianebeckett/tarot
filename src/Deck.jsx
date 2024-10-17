@@ -6,7 +6,7 @@ export function Deck(props) {
 
     return (
         <div className="deck">
-            <img className="deck-cards" src={reverse} />
+            <img className="deck-cards" src={reverse} onClick={handleDraw} />
             <img className="deck-top" src={reverse} onClick={handleDraw} />
         </div>
     )
