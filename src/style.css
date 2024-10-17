@@ -84,7 +84,7 @@ img {
 
 .panel {
     background: #f2f2f2;
-    border: 1px solid rgb(236, 240, 241);
+    border: solid 1px #e6e6e6;
     margin: 0 0 22px 0;
     padding: 20px;
 }
