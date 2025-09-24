@@ -1,13 +1,12 @@
 import React from "react";
 
 export function Deck(props) {
-    const { handleDraw } = props;
-    const reverse = "/cards/00_Reverse.jpg";
+    const { handleDraw, cardBack, cards } = props;
 
     return (
         <div className="deck">
-            <img className="deck-cards" src={reverse} onClick={handleDraw} />
-            <img className="deck-top" src={reverse} onClick={handleDraw} />
+            <img className="deck-cards" src={cardBack} onClick={handleDraw} />
+            <img className="deck-top" src={cardBack} onClick={handleDraw} />
         </div>
     )
 }

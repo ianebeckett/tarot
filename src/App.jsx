@@ -9,6 +9,7 @@ import { Deck } from "./Deck"
     * fire, water, air, earth ->
     * Wands, Cups, Swords, Pentacles
     * */
+const cardBack = "/cards/00_Reverse.jpg";
 const cards = [
     {
         description: "The Fool (0): Represents new beginnings, spontaneity, and adventure. The cliff symbolizes taking risks, while the dog signifies loyalty and instinct.",
@@ -332,7 +333,7 @@ function App() {
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        return min + Math.floor(Math.random() * (max - min + 1));
     }
 
     function handleDraw() {
@@ -346,6 +347,7 @@ function App() {
             randomInt = getRandomInt(0, cards.length - 1);
             newCard = cards[randomInt];
         } while (drawnCards.includes(newCard));
+
         setDrawnCards([...drawnCards, newCard]);
     }
 
@@ -358,19 +360,23 @@ function App() {
     return (
         <div>
             <div className="row">
-                <Deck handleDraw={handleDraw} />
+                <Deck
+                    handleDraw={handleDraw}
+                    cardBack={cardBack}
+                    cards={cards}
+                />
                 {drawnCards.map((card) => (
-                    <div className="card-container" key={card.imgUrl} >
+                    <div className="card-container" key={card.imgUrl}>
                         <img className='card' src={card.imgUrl} />
-                    </div>)
-                )}
+                    </div>
+                ))}
             </div>
             <div className="row">
                 <button id='btn-reset' onClick={handleReset}>RESET</button>
             </div>
         </div>
     );
-};
+}
 
 const container = document.getElementById("root")
 const root = createRoot(container)
