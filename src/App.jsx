@@ -340,11 +340,13 @@ function App() {
             return;
         }
 
-        let random;
+        let randomInt;
+        let newCard;
         do {
-            random = getRandomInt(0, cards.length - 1);
-        } while (drawnCards.includes(cards[random]));
-        setDrawnCards([...drawnCards, cards[random]]);
+            randomInt = getRandomInt(0, cards.length - 1);
+            newCard = cards[randomInt];
+        } while (drawnCards.includes(newCard));
+        setDrawnCards([...drawnCards, newCard]);
     }
 
     function handleReset() {
