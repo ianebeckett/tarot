@@ -330,28 +330,12 @@ function App() {
 
     console.log(drawnCards); // invoked on rerender
 
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return min + Math.floor(Math.random() * (max - min + 1));
-    }
-
-    function handleDraw() {
-        if (drawnCards.length === 3) {
-            return;
-        }
-
-        let randomInt;
-        let newCard;
-        do {
-            randomInt = getRandomInt(0, cards.length - 1);
-            newCard = cards[randomInt];
-        } while (drawnCards.includes(newCard));
-
+    const handleDraw = (newCard) => {
+        if (drawnCards.length === 3) return;
         setDrawnCards([...drawnCards, newCard]);
     }
 
-    function handleReset() {
+    const handleReset = () => {
         if (drawnCards.length) {
             setDrawnCards([]);
         }
@@ -364,6 +348,7 @@ function App() {
                     handleDraw={handleDraw}
                     cardBack={cardBack}
                     cards={cards}
+                    drawnCards={drawnCards}
                 />
                 {drawnCards.map((card) => (
                     <div className="card-container" key={card.imgUrl}>
@@ -376,8 +361,8 @@ function App() {
             </div>
         </div>
     );
-}
+};
 
-const container = document.getElementById("root")
-const root = createRoot(container)
-root.render(React.createElement(App))
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
