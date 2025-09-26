@@ -48,7 +48,7 @@ export function Deck(props) {
         <div className="deck" onClick={handleDeckClick}>
             <img className="card-stack" src={cardBack} />
 
-            <div className={`top-card ${isFlipping ? "flipped" : ""}`}>
+            <div className={`top-card${isFlipping ? " flipped" : ""}`}>
                 <div className="card-inner">
                     <div className="card-face card-back">
                         <img src={cardBack} />

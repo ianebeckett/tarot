@@ -49,7 +49,7 @@ img {
     position: absolute;
     z-index: 1;
 }
-
+ 
 .top-card {
     width: 200px;
     position: relative;
@@ -84,15 +84,11 @@ img {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Hide the back of a face when turned away */
+  backface-visibility: hidden; /* hide the front of the card to create the two-sides illusion */
 }
 
 .card-face.card-front {
   transform: rotateY(180deg); /* Initially hide the front face */
-}
-
-.card-face.card-back {
-  transform: rotateY(0deg); /* Initially hide the front face */
 }
 
 /* Ensure the `img` inside the new elements has the correct styling */
