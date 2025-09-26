@@ -53,6 +53,7 @@ img {
 .top-card {
     width: 200px;
     position: relative;
+    height: auto;
     top: 0;
     left: 0;
     z-index: 2;
@@ -88,6 +89,10 @@ img {
 
 .card-face.card-front {
   transform: rotateY(180deg); /* Initially hide the front face */
+}
+
+.card-face.card-back {
+  transform: rotateY(0deg); /* Initially hide the front face */
 }
 
 /* Ensure the `img` inside the new elements has the correct styling */

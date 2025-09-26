@@ -325,13 +325,16 @@ const cards = [
     },
 ]
 
+const cardLimit = 3;
+
 function App() {
     const [drawnCards, setDrawnCards] = useState([]);
 
     console.log(drawnCards); // invoked on rerender
 
+    // handleDraw is responsible for adding cards to the list of drawn cards.
     const handleDraw = (newCard) => {
-        if (drawnCards.length === 3) return;
+        if (drawnCards.length === cardLimit) return;
         setDrawnCards([...drawnCards, newCard]);
     }
 
@@ -349,13 +352,19 @@ function App() {
                     cardBack={cardBack}
                     cards={cards}
                     drawnCards={drawnCards}
+                    cardLimit={cardLimit}
                 />
-                {drawnCards.map((card) => (
-                    <div className="card-container" key={card.imgUrl}>
-                        <img className='card' src={card.imgUrl} />
-                    </div>
-                ))}
+
+                {
+                    drawnCards.map((card) => (
+                        <div className="card-container" key={card.imgUrl}>
+                            <img className='card' src={card.imgUrl} />
+                        </div>
+                    ))
+                }
+
             </div>
+
             <div className="row">
                 <button id='btn-reset' onClick={handleReset}>RESET</button>
             </div>

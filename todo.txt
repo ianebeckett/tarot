@@ -5,7 +5,7 @@ TOOLS
         -semicolons
         -trailing commas
 CODE
-    extract Components from App
+    extract Board from App
     configure vim eslint lsp and npm eslint to match
     move cards urls to their own module
 STYLE

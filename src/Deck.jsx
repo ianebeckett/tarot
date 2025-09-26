@@ -1,14 +1,15 @@
 import { React, useState, useEffect, useRef } from "react";
 
 export function Deck(props) {
-    const { handleDraw, cardBack, cards, drawnCards } = props;
+    const { handleDraw, cardBack, cards, drawnCards, cardLimit } = props;
     const [isFlipping, setIsFlipping] = useState(false);
     const [nextCard, setNextCard] = useState(cardBack);
     const isAnimating = useRef(false);
 
     const handleDeckClick = () => {
         // prevent multiple flip animations from starting at once
-        if (isAnimating.current || cards.length === 0) return;
+        // also prevent flip animation the limit of drawn cards has been reached
+        if (isAnimating.current || drawnCards.length === cardLimit) return;
 
         // 1. Select the next card to be revealed
         let randomInt;
@@ -34,12 +35,8 @@ export function Deck(props) {
 
     // Reset the card face after the flip
     useEffect(() => {
-        if (!isFlipping) {
-            // Small delay to ensure the card has fully flipped back
-            const timeout = setTimeout(() => setNextCard(cardBack), 100);
-            return () => clearTimeout(timeout);
-        }
-    }, [isFlipping, cardBack]);
+        setIsFlipping(false);
+    }, [drawnCards, cardBack]);
 
     function getRandomIntInRange(min, max) {
         min = Math.ceil(min);
@@ -50,13 +47,14 @@ export function Deck(props) {
     return (
         <div className="deck" onClick={handleDeckClick}>
             <img className="card-stack" src={cardBack} />
+
             <div className={`top-card ${isFlipping ? "flipped" : ""}`}>
                 <div className="card-inner">
                     <div className="card-face card-back">
-                        <img src={cardBack} alt="Card back" />
+                        <img src={cardBack} />
                     </div>
                     <div className="card-face card-front">
-                        <img src={nextCard} alt="Next card" />
+                        <img src={nextCard} />
                     </div>
                 </div>
             </div>
