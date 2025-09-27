@@ -2,6 +2,51 @@ import React, { useState } from "react"
 import { createRoot } from "react-dom/client"
 import { Deck } from "./Deck"
 
+const cardLimit = 3;
+const cardBack = "/cards/00_Reverse.jpg";
+
+function App() {
+    const [drawnCards, setDrawnCards] = useState([]);
+
+    console.log(drawnCards); // invoked on rerender
+
+    // handleDraw is responsible for adding cards to the list of drawn cards.
+    const handleDraw = (newCard) => {
+        if (drawnCards.length === cardLimit) return;
+        setDrawnCards([...drawnCards, newCard]);
+    }
+
+    const handleReset = () => {
+        if (drawnCards.length) {
+            setDrawnCards([]);
+        }
+    }
+
+    return (
+        <div>
+            <div className="row">
+                <Deck
+                    handleDraw={handleDraw}
+                    cardBack={cardBack}
+                    cards={cards}
+                    drawnCards={drawnCards}
+                    cardLimit={cardLimit}
+                />
+                {
+                    drawnCards.map((card) => (
+                        <div className="card-container" key={card.imgUrl}>
+                            <img className='card card-clickable' src={card.imgUrl} />
+                        </div>
+                    ))
+                }
+            </div>
+            <div className="row">
+                <button id='btn-reset' onClick={handleReset}>RESET</button>
+            </div>
+        </div>
+    );
+};
+
 /*
     * The suits of the minor arcana are ordered according to qabalistic
     * philosophy of the elements and their association - according to the 
@@ -9,7 +54,6 @@ import { Deck } from "./Deck"
     * fire, water, air, earth ->
     * Wands, Cups, Swords, Pentacles
     * */
-const cardBack = "/cards/00_Reverse.jpg";
 const cards = [
     {
         description: "The Fool (0): Represents new beginnings, spontaneity, and adventure. The cliff symbolizes taking risks, while the dog signifies loyalty and instinct.",
@@ -324,53 +368,6 @@ const cards = [
         imgUrl: "/cards/Pents14.jpg"
     },
 ]
-
-const cardLimit = 3;
-
-function App() {
-    const [drawnCards, setDrawnCards] = useState([]);
-
-    console.log(drawnCards); // invoked on rerender
-
-    // handleDraw is responsible for adding cards to the list of drawn cards.
-    const handleDraw = (newCard) => {
-        if (drawnCards.length === cardLimit) return;
-        setDrawnCards([...drawnCards, newCard]);
-    }
-
-    const handleReset = () => {
-        if (drawnCards.length) {
-            setDrawnCards([]);
-        }
-    }
-
-    return (
-        <div>
-            <div className="row">
-                <Deck
-                    handleDraw={handleDraw}
-                    cardBack={cardBack}
-                    cards={cards}
-                    drawnCards={drawnCards}
-                    cardLimit={cardLimit}
-                />
-
-                {
-                    drawnCards.map((card) => (
-                        <div className="card-container" key={card.imgUrl}>
-                            <img className='card' src={card.imgUrl} />
-                        </div>
-                    ))
-                }
-
-            </div>
-
-            <div className="row">
-                <button id='btn-reset' onClick={handleReset}>RESET</button>
-            </div>
-        </div>
-    );
-};
 
 const container = document.getElementById("root");
 const root = createRoot(container);

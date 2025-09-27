@@ -2,9 +2,12 @@
     box-sizing: border-box;
 }
 
+
+/*
 div {
     border: 1px solid black;
 }
+*/
 
 body {
     margin: 0;
@@ -32,81 +35,105 @@ img {
 
 .row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     padding: 40px 200px;
-    /* space for transition */
-    column-gap: 20px;
+    min-height: 430.09px; /* prevent layout shift when drawing first card */
+    column-gap: 20px; /* space for transition */
     margin: 0 auto;
 }
 
 .deck {
     width: 200px;
+    height: auto;
     position: relative;
+    flex-shrink: 0;
+}
+
+.card {
+    width: 200px;
+    height: auto;
+}
+
+.card-clickable {
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+
+.card-clickable:hover {
+    transform: translateY(-40px);
+}
+
+.top-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: none;
+}
+
+.top-card:hover {
+    transition: all 0.4s ease-in-out;
+    transform: translateY(-40px);
+}
+
+.top-card.revealed,
+.top-card.leaving {
+    transition: all 0.4s ease-in-out;
+}
+
+.top-card.revealed .card-inner {
+    transform: rotateY(180deg);
+}
+
+.top-card.leaving {
+    transform-origin: right;
+    transform: translateX(200px);
+    opacity: 0;
 }
 
 .card-stack {
     position: absolute;
-    z-index: 1;
-}
- 
-.top-card {
-    width: 200px;
-    position: relative;
-    height: auto;
     top: 0;
     left: 0;
-    z-index: 2;
-    transition: margin 0.1s ease-in-out;
-    perspective: 1000px;
-}
-
-.deck:hover .top-card {
-    margin-top: -40px;
-    margin-bottom: +40px;
-    /* lift card */
-    /*box-shadow: black 10px 10px;*/
+    z-index: 1;
 }
 
 .card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s; /* Control the flip speed */
-  transform-style: preserve-3d; /* Keep children in 3D space */
-}
-
-.top-card.flipped .card-inner {
-  transform: rotateY(180deg); /* Trigger the flip animation */
+    position: relative;
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s; /* Control the flip speed */
+    transform-style: preserve-3d; /* Keep children in 3D space */
 }
 
 .card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* hide the front of the card to create the two-sides illusion */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* hide the front of the card to create the two-sides illusion */
 }
 
 .card-face.card-front {
-  transform: rotateY(180deg); /* Initially hide the front face */
+    transform: rotateY(180deg);
+    /* Initially hide the front face */
 }
 
 /* Ensure the `img` inside the new elements has the correct styling */
 .card-face img {
-  width: 100%;
-  display: block; /* Prevents unwanted spacing under the image */
+    width: 100%;
+    display: block;
+    /* Prevents unwanted spacing under the image */
 }
 
-.card {
-    display: flex;
+.card-container {
     width: 200px;
-    transition: margin 0.1s ease-in-out;
-    /*box-shadow 0.1s ease-in-out;*/
+    min-height: 340px; /* prevent layout shift on first draw */
 }
 
 .card-container:hover .card {
-    margin-top: -40px;
-    margin-bottom: +40px;
+    transform: translateY(-40px);
     /* lift card */
     /*box-shadow: black 10px 10px;*/
 }

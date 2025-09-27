@@ -5,10 +5,18 @@ TOOLS
         -semicolons
         -trailing commas
 CODE
-    extract Board from App
+    extract Board from App 
+    make row style independent of card height by moving card-related styles
+        from row to board e.g. min-height
     configure vim eslint lsp and npm eslint to match
     move cards urls to their own module
 STYLE
+    prevent top card from fading in and translating back onto the deck;
+        it should look like it disappeared
+    fix inconsistency with the top card's transition where it shrinks and moves;
+        sometimes it just flips without translating or shrinking
+        it seems to stay in place when the top-card is still being hovered,
+        but not if I move the mouse away during the animation
     fix jank when hovering top card from below
     remove white area from aroun cards (check Luke smith video)
     don't hover top card if max card already drawn

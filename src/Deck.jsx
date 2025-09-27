@@ -1,41 +1,54 @@
 import { React, useState, useEffect, useRef } from "react";
 
+const CARD_FLIP_TIME_IN_MS = 400;
+const CARD_MOVE_TIME_IN_MS = 600;
+const POST_REVEAL_DELAY_IN_MS = 200;
+
 export function Deck(props) {
     const { handleDraw, cardBack, cards, drawnCards, cardLimit } = props;
-    const [isFlipping, setIsFlipping] = useState(false);
+    /* separate reveal and leaving states to finely control animations */
+    const [isRevealed, setIsRevealed] = useState(false);
+    const [isLeaving, setIsLeaving] = useState(false);
     const [nextCard, setNextCard] = useState(cardBack);
     const isAnimating = useRef(false);
 
     const handleDeckClick = () => {
-        // prevent multiple flip animations from starting at once
-        // also prevent flip animation the limit of drawn cards has been reached
+        // prevent multiple reveal animations from starting at once
+        // also prevent reveal animation when card draw limit reached
         if (isAnimating.current || drawnCards.length === cardLimit) return;
 
-        // 1. Select the next card to be revealed
+        // select the next card to be revealed
         let randomInt;
         let newCard;
         do {
             randomInt = getRandomIntInRange(0, cards.length - 1);
             newCard = cards[randomInt];
-        } while (drawnCards.some(drawnCard => drawnCard.imgUrl === newCard.imgUrl)); // avoid the strict equality check of .includes()
-
+        } while (drawnCards.some(drawnCard => drawnCard.imgUrl === newCard.imgUrl));
         setNextCard(newCard.imgUrl);
 
-        // 2. Start the flip animation
+        // start the reveal animation
         isAnimating.current = true;
-        setIsFlipping(true);
+        setIsRevealed(true);
 
-        // 3. Wait for the flip animation to complete
+        // start the disappearing animation once reveal is done
         setTimeout(() => {
-            // 4. Call the parent's handler to draw the card
+            setIsLeaving(true);
+        }, CARD_FLIP_TIME_IN_MS + POST_REVEAL_DELAY_IN_MS);
+
+        // reset for the next draw
+        setTimeout(() => {
+            setIsRevealed(false);
+        }, CARD_MOVE_TIME_IN_MS);
+
+        setTimeout(() => {
             handleDraw(newCard);
+            setIsLeaving(false);
             isAnimating.current = false;
-        }, 600); // The timeout duration should match the CSS transition duration
+        }, CARD_FLIP_TIME_IN_MS + POST_REVEAL_DELAY_IN_MS + CARD_MOVE_TIME_IN_MS);
     };
 
-    // Reset the card face after the flip
     useEffect(() => {
-        setIsFlipping(false);
+        setNextCard(cardBack)
     }, [drawnCards, cardBack]);
 
     function getRandomIntInRange(min, max) {
@@ -46,9 +59,11 @@ export function Deck(props) {
 
     return (
         <div className="deck" onClick={handleDeckClick}>
-            <img className="card-stack" src={cardBack} />
-
-            <div className={`top-card${isFlipping ? " flipped" : ""}`}>
+            <img className="card card-stack" src={cardBack} />
+            <div className={`card card-clickable top-card
+                    ${isRevealed ? " revealed" : ""}
+                    ${isLeaving ? " leaving" : ""}
+                    `}>
                 <div className="card-inner">
                     <div className="card-face card-back">
                         <img src={cardBack} />
