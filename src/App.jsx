@@ -10,11 +10,14 @@ function App() {
 
     console.log(drawnCards); // invoked on rerender
 
+    asdfasdf
     // handleDraw is responsible for adding cards to the list of drawn cards.
     const handleDraw = (newCard) => {
         if (drawnCards.length === cardLimit) return;
         setDrawnCards([...drawnCards, newCard]);
     }
+
+    foo
 
     const handleReset = () => {
         if (drawnCards.length) {
@@ -39,6 +42,7 @@ function App() {
                         </div>
                     ))
                 }
+
             </div>
             <div className="row">
                 <button id='btn-reset' onClick={handleReset}>RESET</button>
