@@ -10,14 +10,11 @@ function App() {
 
     console.log(drawnCards); // invoked on rerender
 
-    asdfasdf
     // handleDraw is responsible for adding cards to the list of drawn cards.
     const handleDraw = (newCard) => {
         if (drawnCards.length === cardLimit) return;
         setDrawnCards([...drawnCards, newCard]);
     }
-
-    foo
 
     const handleReset = () => {
         if (drawnCards.length) {
