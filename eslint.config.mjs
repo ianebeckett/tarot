@@ -26,6 +26,7 @@ export default [
             react,
             "react-hooks": reactHooks,
         },
+        files: [ "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", ],
         rules: {
             "react/prop-types": 0,
         },
@@ -35,7 +36,7 @@ export default [
                 ...globals.browser,
                 ...globals.node,
             },
-            ecmaVersion: 2022,
+            ecmaVersion: "latest",
             sourceType: "module",
             parserOptions: {
                 ecmaFeatures: {
