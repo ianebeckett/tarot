@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const CARD_FLIP_TIME_IN_MS = 400;
 const CARD_MOVE_TIME_IN_MS = 600;

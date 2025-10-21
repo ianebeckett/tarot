@@ -26,7 +26,7 @@ export default [
             react,
             "react-hooks": reactHooks,
         },
-        files: [ "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", ],
+        files: [ "**/*.js", "**/*.jsx", ],
         rules: {
             "react/prop-types": 0,
         },
