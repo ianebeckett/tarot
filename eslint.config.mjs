@@ -29,6 +29,7 @@ export default [
         files: [ "**/*.js", "**/*.jsx", ],
         rules: {
             "react/prop-types": 0,
+            "react/react-in-jsx-scope": "off"
         },
         ignores: ["node_modules/**", "dist/**", "build/**"],
         languageOptions: {
