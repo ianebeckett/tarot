@@ -1,16 +1,20 @@
 TOOLS
-    fix npm run lint
-    get LSP to error on missing import { useState }
-    configure prettier and eslint
-        -semicolons
-        -trailing commas
+    configure prettier
+    Get Prettier working for <leader>f and format on write
 CODE
+    make card flip more realistic
     extract Board from App 
     make row style independent of card height by moving card-related styles
         from row to board e.g. min-height
     configure vim eslint lsp and npm eslint to match
     move cards urls to their own module?
 STYLE
+    consider where to store images:
+    src/
+    public/
+    API with useEffect to retreive
+    My images are static and unchanging.
+    I could retreive them from Wikimedia
     fix jank when hovering top card from below
     remove white area from aroun cards (check Luke smith video)
     don't hover top card if max card already drawn
