@@ -1,33 +1,34 @@
-TOOLS
-    configure prettier
-    Get Prettier working for <leader>f and format on write
+FEATURES
+    make images smaller?
+    else: preroll cards and load results so they have tim to render
+    showcase: show card description in floating window
+    user login via google etc.
+    save history of user's readings to DB
 CODE
-    make card flip more realistic
-    extract Board from App 
+    extract Board from App?
     make row style independent of card height by moving card-related styles
         from row to board e.g. min-height
-    configure vim eslint lsp and npm eslint to match
     move cards urls to their own module?
 STYLE
-    consider where to store images:
-    src/
-    public/
+    make card flip more realistic/snappy
+    note how the cards on on the board descend smoothly. There's something wrong
+    with my top card animation that makes it jerky.
     API with useEffect to retreive
-    My images are static and unchanging.
-    I could retreive them from Wikimedia
     fix jank when hovering top card from below
-    remove white area from aroun cards (check Luke smith video)
     don't hover top card if max card already drawn
     center drawn cards
     shadow effect on hovered card
     prevent cards from shrinking to fit screen; have them be static sized based on scren width
     idea: instead of rendering div onClick, have the card divs already spaced out and insert a card
     prompt "click the deck to draw a card."
-    get/make better card assets
+    remove white area from aroun cards (check Luke smith video)
+    get/make better card assets (midJourney?)
     apply card border style (white border with rounded edges)
-    check that all cards are the same height and width
-FEATURES
-    showcase: display modal with art and text
-    make rotating loader image, test with 3G connection simulation in devtools
-    user login via google etc.
-    save history of user's readings to DB
+    make all cards are the same height and width
+TOOLS
+    configure prettier
+    Get Prettier working for <leader>f and format on write
+    configure vim eslint lsp and npm eslint to match
+PROJECT
+    make readme
+    record video demo for readme
