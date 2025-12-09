@@ -1,5 +1,6 @@
 FEATURES
     make images smaller?
+    implement responsive images for mobile? theyre already small
     else: preroll cards and load results so they have tim to render
     showcase: show card description in floating window
     user login via google etc.
