@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "nodenext",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true
+    },
+    "files": [
+        "src/App.tsx",
+        "src/Deck.tsx",
+        "src/server.ts"
+    ]
+}
