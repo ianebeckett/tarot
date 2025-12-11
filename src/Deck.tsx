@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import type { Card } from "./cards.js";
+import type { Maybe, Option } from "./types.ts";
 
 type DeckProps = {
     handleDraw: (card: Card) => void,
@@ -12,10 +13,10 @@ type DeckProps = {
 export function Deck(props: DeckProps) {
   const { handleDraw, cardBack, cards, drawnCards, cardLimit } = props;
   /* separate reveal and leaving states to finely control animations */
-  const [isRevealed, setIsRevealed] = useState(false);
-  const [isLeaving, setIsLeaving] = useState(false);
-  const [nextCard, setNextCard] = useState(cardBack);
-  const isAnimating = useRef(false);
+  const [isRevealed, setIsRevealed] = useState<boolean>(false);
+  const [isLeaving, setIsLeaving] = useState<boolean>(false);
+  const [nextCard, setNextCard] = useState<Option<Card>>(null);
+  const isAnimating = useRef<boolean>(false);
 
   const handleDeckClick = () => {
     // prevent multiple reveal animations from starting at once
@@ -36,7 +37,7 @@ export function Deck(props: DeckProps) {
       drawnCards.some((drawnCard: Card) => drawnCard.imgUrl === newCard.imgUrl)
     );
 
-    setNextCard(newCard.imgUrl);
+    setNextCard(newCard);
 
     const CARD_FLIP_TIME_IN_MS = 400;
     const CARD_MOVE_TIME_IN_MS = 600;
@@ -67,7 +68,7 @@ export function Deck(props: DeckProps) {
   };
 
   useEffect(() => {
-    setNextCard(cardBack);
+    setNextCard(null);
   }, [drawnCards, cardBack]);
 
   function getRandomIntInRange(min: number, max: number): number {
@@ -90,7 +91,7 @@ export function Deck(props: DeckProps) {
             <img src={cardBack} />
           </div>
           <div className="card-face card-front">
-            <img src={nextCard} />
+            <img src={nextCard?.imgUrl} />
           </div>
         </div>
       </div>

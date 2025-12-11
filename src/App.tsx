@@ -8,7 +8,7 @@ const cardLimit = 3;
 const cardBack = "/cards/00_Reverse.webp";
 
 function App() {
-  const [drawnCards, setDrawnCards] = useState([]);
+  const [drawnCards, setDrawnCards] = useState<Card[]>([]);
 
   console.log(drawnCards); // invoked on rerender
 
