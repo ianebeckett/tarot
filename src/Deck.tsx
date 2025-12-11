@@ -1,9 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import type { Card } from "./App.tsx";
-
-const CARD_FLIP_TIME_IN_MS = 400;
-const CARD_MOVE_TIME_IN_MS = 600;
-const POST_REVEAL_DELAY_IN_MS = 200;
+import type { Card } from "./cards.js";
 
 type DeckProps = {
     handleDraw: (card: Card) => void,
@@ -41,6 +37,10 @@ export function Deck(props: DeckProps) {
     );
 
     setNextCard(newCard.imgUrl);
+
+    const CARD_FLIP_TIME_IN_MS = 400;
+    const CARD_MOVE_TIME_IN_MS = 600;
+    const POST_REVEAL_DELAY_IN_MS = 200;
 
     // start the reveal animation
     isAnimating.current = true;
