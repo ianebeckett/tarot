@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "nodenext",
+        "target": "esnext",
+        "preserveConstEnums": true,
+    },
+    "files": [
+        "src/App.tsx",
+        "src/Deck.tsx",
+        "src/server.ts"
+    ],
+}

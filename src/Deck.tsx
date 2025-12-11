@@ -1,10 +1,19 @@
 import { useState, useEffect, useRef } from "react";
+import type { Card } from "./App.tsx";
 
 const CARD_FLIP_TIME_IN_MS = 400;
 const CARD_MOVE_TIME_IN_MS = 600;
 const POST_REVEAL_DELAY_IN_MS = 200;
 
-export function Deck(props) {
+type DeckProps = {
+    handleDraw: (card: Card) => void,
+    cardBack: string,
+    cards: Card[],
+    drawnCards: Card[],
+    cardLimit: number,
+}
+
+export function Deck(props: DeckProps) {
   const { handleDraw, cardBack, cards, drawnCards, cardLimit } = props;
   /* separate reveal and leaving states to finely control animations */
   const [isRevealed, setIsRevealed] = useState(false);
@@ -18,14 +27,19 @@ export function Deck(props) {
     if (isAnimating.current || drawnCards.length === cardLimit) return;
 
     // select the next card to be revealed
-    let randomInt;
-    let newCard;
+    let randomInt: number;
+    let newCard: Card;
+
     do {
       randomInt = getRandomIntInRange(0, cards.length - 1);
-      newCard = cards[randomInt];
+      if (cards[randomInt] === undefined) {
+          throw new Error(`Cards[${randomInt}] is undefined.`);
+      }
+      newCard = cards[randomInt]!;
     } while (
-      drawnCards.some((drawnCard) => drawnCard.imgUrl === newCard.imgUrl)
+      drawnCards.some((drawnCard: Card) => drawnCard.imgUrl === newCard.imgUrl)
     );
+
     setNextCard(newCard.imgUrl);
 
     // start the reveal animation
@@ -56,7 +70,7 @@ export function Deck(props) {
     setNextCard(cardBack);
   }, [drawnCards, cardBack]);
 
-  function getRandomIntInRange(min, max) {
+  function getRandomIntInRange(min: number, max: number): number {
     min = Math.ceil(min);
     max = Math.floor(max);
     return min + Math.floor(Math.random() * (max - min + 1));

@@ -1,3 +1,9 @@
+TOOLS
+    replace prettier, eslint, quick-lint-js with Biome
+PROJECT
+    mmake stylesheets
+    make readme
+    record video demo for readme
 FEATURES
     make images smaller?
     implement responsive images for mobile? theyre already small
@@ -6,6 +12,8 @@ FEATURES
     user login via google etc.
     save history of user's readings to DB
 CODE
+    rename imgUrl to path
+    rename handleDeckClick to handleClickDeck
     extract Board from App?
     make row style independent of card height by moving card-related styles
         from row to board e.g. min-height
@@ -26,10 +34,3 @@ STYLE
     get/make better card assets (midJourney?)
     apply card border style (white border with rounded edges)
     make all cards are the same height and width
-TOOLS
-    configure prettier
-    Get Prettier working for <leader>f and format on write
-    configure vim eslint lsp and npm eslint to match
-PROJECT
-    make readme
-    record video demo for readme

@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"./src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "compile": "tsc",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -17,6 +18,9 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.37.0",
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.2",

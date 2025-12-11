@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { Deck } from "./Deck";
+import { Deck } from "./Deck.js";
 
 const cardLimit = 3;
 const cardBack = "/cards/00_Reverse.webp";
+
+export type Card = {
+    description: string,
+    imgUrl: string,
+};
 
 function App() {
   const [drawnCards, setDrawnCards] = useState([]);
@@ -11,7 +16,7 @@ function App() {
   console.log(drawnCards); // invoked on rerender
 
   // handleDraw is responsible for adding cards to the list of drawn cards.
-  const handleDraw = (newCard) => {
+  const handleDraw = (newCard: Card) => {
     if (drawnCards.length === cardLimit) return;
     setDrawnCards([...drawnCards, newCard]);
   };
@@ -47,13 +52,6 @@ function App() {
   );
 }
 
-/*
- * The suits of the minor arcana are ordered according to qabalistic
- * philosophy of the elements and their association - according to the
- * Golden Dawn - to each suit:
- * fire, water, air, earth ->
- * Wands, Cups, Swords, Pentacles
- * */
 const cards = [
   {
     description:
@@ -448,5 +446,8 @@ const cards = [
 ];
 
 const container = document.getElementById("root");
+if (container === null) {
+    throw new Error("Container is null.")
+}
 const root = createRoot(container);
 root.render(<App />);
