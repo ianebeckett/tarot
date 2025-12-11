@@ -1,1 +1,1 @@
-{"version":3,"file":"Deck.d.ts","sourceRoot":"","sources":["Deck.tsx"],"names":[],"mappings":"AAeA,wBAAgB,IAAI,CAAC,KAAK,KAAA,2CA8EzB"}
+{"version":3,"file":"Deck.d.ts","sourceRoot":"","sources":["Deck.tsx"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,YAAY,CAAC;AAGvC,KAAK,SAAS,GAAG;IACb,UAAU,EAAE,CAAC,IAAI,EAAE,IAAI,KAAK,IAAI,CAAC;IACjC,QAAQ,EAAE,MAAM,CAAC;IACjB,KAAK,EAAE,IAAI,EAAE,CAAC;IACd,UAAU,EAAE,IAAI,EAAE,CAAC;IACnB,SAAS,EAAE,MAAM,CAAC;CACrB,CAAA;AAED,wBAAgB,IAAI,CAAC,KAAK,EAAE,SAAS,2CAuFpC"}

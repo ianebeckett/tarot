@@ -1,5 +1,2 @@
-export type Card = {
-    description: string;
-    imgUrl: string;
-};
+export {};
 //# sourceMappingURL=App.d.ts.map
