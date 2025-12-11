@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import type { Card } from "./cards.js";
-import type { Maybe, Option } from "./types.ts";
+import type { Nullable } from "./types.ts";
 
 type DeckProps = {
     handleDraw: (card: Card) => void,
@@ -15,7 +15,7 @@ export function Deck(props: DeckProps) {
   /* separate reveal and leaving states to finely control animations */
   const [isRevealed, setIsRevealed] = useState<boolean>(false);
   const [isLeaving, setIsLeaving] = useState<boolean>(false);
-  const [nextCard, setNextCard] = useState<Option<Card>>(null);
+  const [nextCard, setNextCard] = useState<Nullable<Card>>(null);
   const isAnimating = useRef<boolean>(false);
 
   const handleDeckClick = () => {
