@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "tsc --noEmit && eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
     "compile": "tsc",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "tsc --noEmit && vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "tsc --noEmit && vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
